@@ -1,66 +1,155 @@
-{
-  "info": {
-    "name": "Critter Chronologer",
-    "_postman_id": "critter-collection",
-    "description": "Requests for testing the Critter Chronologer API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-  },
-  "item": [
-    {
-      "name": "Create Customer",
-      "request": {
-        "method": "POST",
-        "header": [{ "key": "Content-Type", "value": "application/json" }],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"name\": \"Alice\",\n  \"phoneNumber\": \"555-0100\",\n  \"notes\": \"Test customer\",\n  \"petIds\": []\n}"
-        },
-        "url": { "raw": "http://localhost:8083/user/customer", "protocol": "http", "host": ["localhost"], "port": "8083", "path": ["user","customer"] }
-      }
-    },
-    {
-      "name": "Create Pet",
-      "request": {
-        "method": "POST",
-        "header": [{ "key": "Content-Type", "value": "application/json" }],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"type\": \"DOG\",\n  \"name\": \"Rex\",\n  \"ownerId\": 1,\n  \"birthDate\": \"2024-01-01\"\n}"
-        },
-        "url": { "raw": "http://localhost:8083/pet", "protocol": "http", "host": ["localhost"], "port": "8083", "path": ["pet"] }
-      }
-    },
-    {
-      "name": "Create Employee",
-      "request": {
-        "method": "POST",
-        "header": [{ "key": "Content-Type", "value": "application/json" }],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"name\": \"Bob\",\n  \"skills\": [\"PETTING\", \"FEEDING\"],\n  \"daysAvailable\": [\"MONDAY\", \"TUESDAY\"]\n}"
-        },
-        "url": { "raw": "http://localhost:8083/user/employee", "protocol": "http", "host": ["localhost"], "port": "8083", "path": ["user","employee"] }
-      }
-    },
-    {
-      "name": "Create Schedule",
-      "request": {
-        "method": "POST",
-        "header": [{ "key": "Content-Type", "value": "application/json" }],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"employeeIds\": [1],\n  \"petIds\": [1],\n  \"date\": \"2024-06-01\",\n  \"activities\": [\"FEEDING\", \"PETTING\"]\n}"
-        },
-        "url": { "raw": "http://localhost:8083/schedule", "protocol": "http", "host": ["localhost"], "port": "8083", "path": ["schedule"] }
-      }
-    },
-    {
-      "name": "Get All Schedules",
-      "request": { "method": "GET", "url": { "raw": "http://localhost:8083/schedule", "protocol": "http", "host": ["localhost"], "port": "8083", "path": ["schedule"] } }
-    },
-    {
-      "name": "Get Pet by Id",
-      "request": { "method": "GET", "url": { "raw": "http://localhost:8083/pet/1", "protocol": "http", "host": ["localhost"], "port": "8083", "path": ["pet","1"] } }
-    }
-  ]
+﻿{
+    "info":  {
+                 "name":  "Critter Chronologer",
+                 "_postman_id":  "critter-collection",
+                 "description":  "Requests for testing the Critter Chronologer API",
+                 "schema":  "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+             },
+    "item":  [
+                 {
+                     "name":  "Create Customer",
+                     "request":  {
+                                     "method":  "POST",
+                                     "header":  [
+                                                    {
+                                                        "key":  "Content-Type",
+                                                        "value":  "application/json"
+                                                    }
+                                                ],
+                                     "body":  {
+                                                  "mode":  "raw",
+                                                  "raw":  "{\n  \"name\": \"Alice\",\n  \"phoneNumber\": \"555-0100\",\n  \"notes\": \"Test customer\",\n  \"petIds\": []\n}"
+                                              },
+                                     "url":  {
+                                                 "raw":  "http://localhost:8083/user/customer",
+                                                 "protocol":  "http",
+                                                 "host":  [
+                                                              "localhost"
+                                                          ],
+                                                 "port":  "8083",
+                                                 "path":  [
+                                                              "user",
+                                                              "customer"
+                                                          ]
+                                             }
+                                 }
+                 },
+                 {
+                     "name":  "Create Pet",
+                     "request":  {
+                                     "method":  "POST",
+                                     "header":  [
+                                                    {
+                                                        "key":  "Content-Type",
+                                                        "value":  "application/json"
+                                                    }
+                                                ],
+                                     "body":  {
+                                                  "mode":  "raw",
+                                                  "raw":  "{\n  \"type\": \"DOG\",\n  \"name\": \"Rex\",\n  \"ownerId\": 1,\n  \"birthDate\": \"2024-01-01\"\n}"
+                                              },
+                                     "url":  {
+                                                 "raw":  "http://localhost:8083/pet",
+                                                 "protocol":  "http",
+                                                 "host":  [
+                                                              "localhost"
+                                                          ],
+                                                 "port":  "8083",
+                                                 "path":  [
+                                                              "pet"
+                                                          ]
+                                             }
+                                 }
+                 },
+                 {
+                     "name":  "Create Employee",
+                     "request":  {
+                                     "method":  "POST",
+                                     "header":  [
+                                                    {
+                                                        "key":  "Content-Type",
+                                                        "value":  "application/json"
+                                                    }
+                                                ],
+                                     "body":  {
+                                                  "mode":  "raw",
+                                                  "raw":  "{\n  \"name\": \"Bob\",\n  \"skills\": [\"PETTING\", \"FEEDING\"],\n  \"daysAvailable\": [\"MONDAY\", \"TUESDAY\"]\n}"
+                                              },
+                                     "url":  {
+                                                 "raw":  "http://localhost:8083/user/employee",
+                                                 "protocol":  "http",
+                                                 "host":  [
+                                                              "localhost"
+                                                          ],
+                                                 "port":  "8083",
+                                                 "path":  [
+                                                              "user",
+                                                              "employee"
+                                                          ]
+                                             }
+                                 }
+                 },
+                 {
+                     "name":  "Create Schedule",
+                     "request":  {
+                                     "method":  "POST",
+                                     "header":  [
+                                                    {
+                                                        "key":  "Content-Type",
+                                                        "value":  "application/json"
+                                                    }
+                                                ],
+                                     "body":  {
+                                                  "mode":  "raw",
+                                                  "raw":  "{\n  \"employeeIds\": [1],\n  \"petIds\": [1],\n  \"date\": \"2024-06-01\",\n  \"activities\": [\"FEEDING\", \"PETTING\"]\n}"
+                                              },
+                                     "url":  {
+                                                 "raw":  "http://localhost:8083/schedule",
+                                                 "protocol":  "http",
+                                                 "host":  [
+                                                              "localhost"
+                                                          ],
+                                                 "port":  "8083",
+                                                 "path":  [
+                                                              "schedule"
+                                                          ]
+                                             }
+                                 }
+                 },
+                 {
+                     "name":  "Get All Schedules",
+                     "request":  {
+                                     "method":  "GET",
+                                     "url":  {
+                                                 "raw":  "http://localhost:8083/schedule",
+                                                 "protocol":  "http",
+                                                 "host":  [
+                                                              "localhost"
+                                                          ],
+                                                 "port":  "8083",
+                                                 "path":  [
+                                                              "schedule"
+                                                          ]
+                                             }
+                                 }
+                 },
+                 {
+                     "name":  "Get Pet by Id",
+                     "request":  {
+                                     "method":  "GET",
+                                     "url":  {
+                                                 "raw":  "http://localhost:8083/pet/1",
+                                                 "protocol":  "http",
+                                                 "host":  [
+                                                              "localhost"
+                                                          ],
+                                                 "port":  "8083",
+                                                 "path":  [
+                                                              "pet",
+                                                              "1"
+                                                          ]
+                                             }
+                                 }
+                 }
+             ]
 }
